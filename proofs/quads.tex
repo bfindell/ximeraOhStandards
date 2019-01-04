@@ -171,15 +171,15 @@ Quadrilateral $ABCD$ is a kite as marked.  Prove that $\overleftrightarrow{BD}$ 
 \draw[color=qqqqff] (0.14,2.29) node {$B$};
 \draw [fill=qqqqff] (0.,-5.) circle (1.2pt);
 \draw[color=qqqqff] (-0.26,-5.09) node {$D$};
-\draw [fill=qqqqff] (0.,0) circle (1.2pt);
-\draw[color=qqqqff] (-0.26,-.26) node {$X$};
+%\draw [fill=qqqqff] (0.,0) circle (1.2pt);
+%\draw[color=qqqqff] (-0.26,-.26) node {$X$};
 %\end{scriptsize}
 \end{tikzpicture}
 \end{image}
 
 Key theorem:  The points on a perpendicular bisector are exactly those that are equidistant from the endpoints of a segment.  
 
-Proof:  Because $B$ and $\answer[format=string]{D}$ are each $\answer[format=string]{equidistant}$ from $A$ and $\answer[format=string]{C}$, they each must lie on the perpendicular bisector of segment $\answer[format=string]{AC}$, which implies that 
+Proof:  Because $B$ and $D$ are each $\answer[format=string]{equidistant}$ from $A$ and $C$, they each must lie on the perpendicular bisector of segment $\answer[format=string]{AC}$, which implies that 
 $\overleftrightarrow{BD}$ is its perpendicular bisector.  
 
 \end{problem}
@@ -269,17 +269,14 @@ A proof that makes use of triangle congruence:
 In the proof above, $\triangle BAD \cong \triangle BCD$ by $\answer[format=string]{SSS}$, and 
 $\triangle ABX \cong \triangle CBX$ by $\answer[format=string]{SAS}$.  
 
-\detail{
-\begin{enumerate}
-\item $\overline{BD}\cong \overline{BD}$, so that $\triangle BAD \cong \triangle BCD$ by SSS.  
-\item $\angle ABD \cong \angle CBD$ by CPCTC. 
-\item $\overline{BX}\cong \overline{BX}$, so that $\triangle ABX \cong \triangle CBX$ by SAS.  
-\item $\angle BXA \cong \angle BXC$ by CPCTC, and they are a linear pair, 
+\detail{Paragraph proof:
+\\ $\overline{BD}\cong \overline{BD}$, so that $\triangle BAD \cong \triangle BCD$ by SSS.  
+\\ $\angle ABD \cong \angle CBD$ by CPCTC. 
+\\ $\overline{BX}\cong \overline{BX}$, so that $\triangle ABX \cong \triangle CBX$ by SAS.  
+\\ $\angle BXA \cong \angle BXC$ by CPCTC, and they are a linear pair, 
 so $\overline{BX}\perp\overline{AC}$. 
-\item $\overline{AX}\cong \overline{CX}$ by CPCTC, so $X$ is the midpoint of $\overline{AC}$.
-\item Thus, $\overleftrightarrow{BD}$ is the perpendicular bisector of 
-$\overline{AC}$.
-\end{enumerate}
+\\ $\overline{AX}\cong \overline{CX}$ by CPCTC, so $X$ is the midpoint of $\overline{AC}$.
+\\ Thus, $\overleftrightarrow{BD}$ is the perpendicular bisector of $\overline{AC}$.
 }
 \end{problem}
 
