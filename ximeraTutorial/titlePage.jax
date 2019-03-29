@@ -15,6 +15,7 @@
 \newcommand {\MidFrameCommand }[0]{\FrameCommand }
 \newcommand {\LastFrameCommand }[0]{\FrameCommand }
 \newcommand {\FrameHeightAdjust }[0]{6pt}
+\newcommand {\sectionOutcomes }[0]{}
 \newcommand {\N }[0]{\mathbb N}
 \newcommand {\W }[0]{\mathbb W}
 \newcommand {\C }[0]{\mathbb C}
