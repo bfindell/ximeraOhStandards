@@ -5,6 +5,13 @@
 
 \input{../preamble.tex}
 
+%\newcommand{\N}{\mathbb N}
+%\newcommand{\W}{\mathbb W}
+%\newcommand{\C}{\mathbb C}
+%\newcommand{\Z}{\mathbb Z}
+%\newcommand{\Q}{\mathbb Q}
+\renewcommand{\R}{\mathbb R}
+
 \title{Vocabulary Review}
 \author{Martin Golubitsky}
 \begin{document}
@@ -16,35 +23,36 @@ Short-answer, multiple-choice, and select-all questions about key vocabulary.
 %Useful questions: 
 %
 %What is regular quadrilateral? 
-% Definition of ? 
+% Based on definition of ? 
 %Write the Pythagorean theorem. 
 %Measure angles. 
 %Angle sum in a triangle. 
 %Triangulate a figure 
 
-% Definition 2.3.1. 
+% Based on definition 2.3.1. 
 \begin{question}
-A linear system of equations is $\answer[format=string]{inconsistent}$ if the system has no solutions and $\answer[format=string]{consistent}$ if the system does have solutions. 
+A linear system of equations that has no solutions is said to be $\answer[format=string]{inconsistent}$.  With one or more solutions, the system is $\answer[format=string]{consistent}$. 
 \end{question} 
 
-% Definition 2.4.1. 
+% Based on definition 2.4.1. 
 \begin{question}
-A matrix $E$ is in (row) $\answer[format=string]{echelon form}$ if two conditions hold.
+Suppose in matrix $E$, two conditions hold:
 \begin{enumerate}
 \item The first nonzero entry in each row of $E$ is equal to $1$. This leading entry $1$ is called a 
 $\answer[format=string]{pivot}$.
 \item A pivot in the $(i + 1)^{st}$ row of $E$ occurs in a column to the right of the column where the pivot in the $i^{th}$ row occurs.
 \end{enumerate}
+The matrix is (row) $\answer[format=string]{echelon form}$.  (Hint: two words.)
 
-Note: A consequence of this definition is that all rows in an echelon form matrix that are identically zero occur at the bottom of the matrix.
+%Note: A consequence of this definition is that all rows in an echelon form matrix that are identically zero occur at the bottom of the matrix.
 \end{question} 
 
-% Definition 2.4.2. 
+% Based on definition 2.4.2. 
 \begin{question}
-Two $m \times n$ matrices are $\answer[format=string]{row equivalent}$ if one can be transformed to the other by a sequence of elementary row operations. 
+If an $m \times n$ matrix can be transformed into another by a sequence of elementary row operations, the two matrices are said to be $\answer[format=string]{row equivalent}$.  (Hint: two words.)
 \end{question} 
 
-% Definition 2.4.4. 
+% Based on definition 2.4.4. 
 \begin{question}
 A matrix $E$ is in $\answer[format=string]{reduced echelon form}$ if 
 \begin{enumerate}
@@ -54,14 +62,15 @@ A matrix $E$ is in $\answer[format=string]{reduced echelon form}$ if
 
 \end{question} 
 
-% Definition 2.4.10. 
+% Based on definition 2.4.10. 
 \begin{question}
-Let $A$ be an $m \times n$ matrix that is row equivalent to a reduced echelon form matrix $E$. Then 
-the $\answer[format=string]{rank}$ of $A$ % denoted $\textrm{rank}(A)$, 
-is the number of nonzero rows in $E$. 
+Let $A$ be an $m \times n$ matrix that is row equivalent to a reduced echelon form matrix $E$. 
+The number of nonzero rows in $E$ is called the $\answer[format=string]{rank}$ of $A$.
+% denoted $\textrm{rank}(A)$, 
+ 
 \end{question} 
 
-% Definition 3.3.1. 
+% Based on definition 3.3.1. 
 \begin{question}
 A mapping $L: \R^n \to \R^m$ is $\answer[format=string]{linear}$ if 
 \begin{enumerate}
@@ -70,41 +79,40 @@ A mapping $L: \R^n \to \R^m$ is $\answer[format=string]{linear}$ if
 \end{enumerate}
 \end{question} 
 
-% Definition 3.3.2. 
+% Based on definition 3.3.2. 
 \begin{question}
-Let $j$ be an integer between $1$ and $n$. The $n$-vector $e_j$ is the vector that has a $\answer{1}$ in the $j^{th}$ entry and a $\answer{0}$ in every other entries. 
+Let $j$ be an integer between $1$ and $n$. The $n$-vector $e_j$ is the vector that has a $\answer{1}$ in the $j^{th}$ entry and a $\answer{0}$ in every other entry. 
 \end{question} 
 
-% Definition 3.7.1. 
+% Based on definition 3.7.1. 
 \begin{question}
-The $n \times n$ matrix $A$ is invertible if there is an $n \times n$ matrix $B$ such that 
-$AB=I_n$ and $BA=I_n$. 
-The matrix $B$ is called an $\answer[format=string]{inverse}$ of $A$. If $A$ is not invertible, then $A$ is noninvertible or $\answer[format=string]{singular}$. 
+Given an $n \times n$ matrix $A$, if there is an $n \times n$ matrix $B$ such that 
+$AB=I_n$ and $BA=I_n$, then $A$ is said to be $\answer[format=string]{invertible}$, and the matrix $B$ is called the $\answer[format=string]{inverse}$ of $A$. If there is no such matrix $B$, the $A$ is said to be $\answer[format=string]{singular}$, or noninvertible. 
 \end{question} 
 
-% Definition 3.8.1. 
+% Based on definition 3.8.1. 
 \begin{question}
-The determinant of the $2 \times 2$ matrix $A = \begin{bmatrix} a & b \\ c & d\end{bmatrix}$ is $det(A) = \answer{ad - bc}$. 
+If $A = \begin{bmatrix} a & b \\ c & d\end{bmatrix}$, then the determinant of $A$, $det(A) = \answer{ad - bc}$. 
 \end{question} 
 
-%% Definition 4.4.1. 
+%% Based on definition 4.4.1. 
 %\begin{question}
 %An invariant line for a linear system of differential equations is called an eigendirection. 
 %Hence, for some real number $\lambda$. 
 %$Cv = \lambda v$ % (4.5.8) 
 %\end{question} 
 %
-%% Definition 4.5.1. 
+%% Based on definition 4.5.1. 
 %\begin{question}
 %A nonzero vector $v$ satisfying (4.5.8) is called an eigenvector of the matrix $C$, and the number $\lambda$ is an eigenvalue of the matrix $C$.
 %\end{question} 
 %
-%% Definition 4.6.1. 
+%% Based on definition 4.6.1. 
 %\begin{question}
 %The characteristic polynomial of the matrix $A$ is $pA(\lambda) = det(A - \lambda I_2)$. 
 %\end{question}
 %
-%% Definition 4.6.2.
+%% Based on definition 4.6.2.
 %\begin{question}
 %For $2 \times 2$ matrices we now generalize our first definition of eigenvalues, definition 4.5.1, to include complex eigenvalues, as follows:
 %
