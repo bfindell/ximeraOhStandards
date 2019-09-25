@@ -1,0 +1,171 @@
+% Section 2.2 Anatomy of Figures
+
+\documentclass[nooutcomes]{ximera}
+%\documentclass[space,handout,nooutcomes]{ximera}
+
+\input{../preamble.tex}
+
+\title{Vocabulary Review}
+\author{Martin Golubitsky}
+\begin{document}
+\begin{abstract}
+Short-answer, multiple-choice, and select-all questions about key vocabulary. 
+\end{abstract}
+\maketitle
+
+%Useful questions: 
+%
+%What is regular quadrilateral? 
+% Definition of ? 
+%Write the Pythagorean theorem. 
+%Measure angles. 
+%Angle sum in a triangle. 
+%Triangulate a figure 
+
+% Definition 2.3.1. 
+\begin{question}
+A linear system of equations is $\answer[format=string]{inconsistent}$ if the system has no solutions and $\answer[format=string]{consistent}$ if the system does have solutions. 
+\end{question} 
+
+% Definition 2.4.1. 
+\begin{question}
+A matrix $E$ is in (row) $\answer[format=string]{echelon form}$ if two conditions hold.
+\begin{enumerate}
+\item The first nonzero entry in each row of $E$ is equal to $1$. This leading entry $1$ is called a 
+$\answer[format=string]{pivot}$.
+\item A pivot in the $(i + 1)^{st}$ row of $E$ occurs in a column to the right of the column where the pivot in the $i^{th}$ row occurs.
+\end{enumerate}
+
+Note: A consequence of this definition is that all rows in an echelon form matrix that are identically zero occur at the bottom of the matrix.
+\end{question} 
+
+% Definition 2.4.2. 
+\begin{question}
+Two $m \times n$ matrices are $\answer[format=string]{row equivalent}$ if one can be transformed to the other by a sequence of elementary row operations. 
+\end{question} 
+
+% Definition 2.4.4. 
+\begin{question}
+A matrix $E$ is in $\answer[format=string]{reduced echelon form}$ if 
+\begin{enumerate}
+\item $E$ is in echelon form, and
+\item in every column of $E$ having a pivot, every entry in that column other than the pivot is $0$.
+\end{enumerate}
+
+\end{question} 
+
+% Definition 2.4.10. 
+\begin{question}
+Let $A$ be an $m \times n$ matrix that is row equivalent to a reduced echelon form matrix $E$. Then 
+the $\answer[format=string]{rank}$ of $A$ % denoted $\textrm{rank}(A)$, 
+is the number of nonzero rows in $E$. 
+\end{question} 
+
+% Definition 3.3.1. 
+\begin{question}
+A mapping $L: \R^n \to \R^m$ is $\answer[format=string]{linear}$ if 
+\begin{enumerate}
+\item $L(x+y)=\answer[format=string]{L(x)+L(y)}$ for all $x,y\in \R^n$. 
+\item $L(cx)=\answer[format=string]{cL(x)}$ for all $x\in \R^n$ and all scalars $c\in \R$.
+\end{enumerate}
+\end{question} 
+
+% Definition 3.3.2. 
+\begin{question}
+Let $j$ be an integer between $1$ and $n$. The $n$-vector $e_j$ is the vector that has a $\answer{1}$ in the $j^{th}$ entry and a $\answer{0}$ in every other entries. 
+\end{question} 
+
+% Definition 3.7.1. 
+\begin{question}
+The $n \times n$ matrix $A$ is invertible if there is an $n \times n$ matrix $B$ such that 
+$AB=I_n$ and $BA=I_n$. 
+The matrix $B$ is called an $\answer[format=string]{inverse}$ of $A$. If $A$ is not invertible, then $A$ is noninvertible or $\answer[format=string]{singular}$. 
+\end{question} 
+
+% Definition 3.8.1. 
+\begin{question}
+The determinant of the $2 \times 2$ matrix $A = \begin{bmatrix} a & b \\ c & d\end{bmatrix}$ is $det(A) = \answer{ad - bc}$. 
+\end{question} 
+
+%% Definition 4.4.1. 
+%\begin{question}
+%An invariant line for a linear system of differential equations is called an eigendirection. 
+%Hence, for some real number $\lambda$. 
+%$Cv = \lambda v$ % (4.5.8) 
+%\end{question} 
+%
+%% Definition 4.5.1. 
+%\begin{question}
+%A nonzero vector $v$ satisfying (4.5.8) is called an eigenvector of the matrix $C$, and the number $\lambda$ is an eigenvalue of the matrix $C$.
+%\end{question} 
+%
+%% Definition 4.6.1. 
+%\begin{question}
+%The characteristic polynomial of the matrix $A$ is $pA(\lambda) = det(A - \lambda I_2)$. 
+%\end{question}
+%
+%% Definition 4.6.2.
+%\begin{question}
+%For $2 \times 2$ matrices we now generalize our first definition of eigenvalues, definition 4.5.1, to include complex eigenvalues, as follows:
+%
+%An eigenvalue of $A$ is a root of the characteristic polynomial $pA$.
+%\end{question} 
+%
+
+
+\end{document}
+
+
+% Other item types
+%
+%
+%\begin{question}  
+%When three (or more) points all lie on the same line, we say they are \dots
+%\begin{multipleChoice}  
+%\choice{coplanar.}  
+%\choice[correct]{collinear.}  
+%\choice{conjoined.}
+%\choice{concurrent.}  
+%\choice{none of these.}
+%\end{multipleChoice}  
+%\end{question}
+%
+
+
+%\begin{question}  
+%The \textbf{circumcenter} of a triangle is \dots [select all]
+%  \begin{selectAll}  
+%    \choice{the point of concurrency of the medians.}  
+%    \choice{the point of concurrency of the angle bisectors.}  
+%    \choice[correct]{the point of concurrency of the perpendicular bisectors.}  
+%    \choice{the point of concurrency of the altitudes.}  
+%    \choice{the balance point for the triangle.}
+%    \choice{the center in the triangle.}
+%    \choice{the center of the incircle.}
+%    \choice[correct]{the center of the circumcircle.}
+%    \choice{equidistant from the sides of the triangle.}
+%    \choice[correct]{equidistant from the vertices of the triangle.}    
+%  \end{selectAll}  
+%\end{question}
+
+%  \begin{explanation}\hfil
+%    \begin{itemize}
+%    \item Curve $A$ is defined by an
+%      \wordChoice{\choice{even}\choice[correct]{odd}} degree
+%      polynomial with a \wordChoice{\choice[correct]{positive}\choice{negative}}
+%      leading term.
+%    \item Curve $B$ is defined by an
+%      \wordChoice{\choice{even}\choice[correct]{odd}} degree
+%      polynomial with a
+%      \wordChoice{\choice{positive}\choice[correct]{negative}} leading
+%      term.
+%    \item Curve $C$ is defined by an
+%      \wordChoice{\choice[correct]{even}\choice{odd}} degree
+%      polynomial with a \wordChoice{\choice[correct]{positive}\choice{negative}}
+%      leading term.
+%    \item Curve $D$ is defined by an
+%      \wordChoice{\choice[correct]{even}\choice{odd}} degree
+%      polynomial with a \wordChoice{\choice{positive}\choice[correct]{negative}}
+%      leading term.
+%    \end{itemize}
+%  \end{explanation}
