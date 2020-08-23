@@ -4,6 +4,8 @@
 *.out
 *.toc
 *.pdf
+*.png
+*.mw
 *.synctex.gz
 *.jax
 *.oc
