@@ -1,0 +1,289 @@
+\documentclass{article}
+
+\input{preamble}
+
+\title{Math 2568 Homework 11}
+\author{\phantom{Dr. Golubitsky}}
+\date{Due: Monday, November 18, 2019}
+
+\makeatletter
+\newlabel{c10.2.7a}{{9}{427}}
+\newlabel{c10.2.7b}{{11}{427}}
+\newlabel{L:linmapfrombasis}{{8.1.2}{445}}
+\newlabel{e:defA}{{8.1.3}{447}}
+\newlabel{S:coordinates}{{8.3}{461}}
+\makeatother
+\begin{document}
+
+\maketitle
+
+
+\problemlabel
+
+\noindent In Exercises~\ref{c10.2.7a} -- \ref{c10.2.7b} decide whether 
+the given statements are {\em true\/} or {\em false\/}. If the 
+statements are false, give a counterexample; if the statements are true, 
+give a proof.
+
+
+\exerciselabel{9}{7.2}\begin{exercise} \label{c10.2.7a}
+If the eigenvalues of a $2\times 2$ matrix are equal to $1$,
+then the four entries of that matrix are each less than $500$.
+
+\begin{solution}
+
+\ans The statement is false. 
+
+\soln  A counterexample is the matrix $A = \mattwo{1}{500}{0}{1}$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{11}{7.2}\begin{exercise} \label{c10.2.7b}
+The trace of the product of two $n\times n$ matrices is the
+product of the traces.
+
+\begin{solution}
+\ans The statement is false.
+
+\soln For example, let
+\[
+A = \mattwo{1}{-1}{0}{1} \AND B = \mattwo{1}{-1}{2}{0}.
+\]
+Then $\trace(A)\trace(B) = 2(1) = 2$, and $\trace(AB) = -1$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\problemlabel
+
+
+
+\exerciselabel{1}{8.1}\begin{exercise} \label{c7.2.1}
+Use Theorem~\ref{L:linmapfrombasis} and \eqref{e:defA} to 
+construct matrix of a linear mapping $L$ from $\R^3$ to $\R^2$ with $L(v_i)=w_i$, $i=1,2,3$, where
+\[
+v_1=(1,0,2)\quad v_2=(2,-1,1) \quad v_3=(-2,1,0)
+\]
+and
+\[
+w_1=(-1,0) \quad w_2=(0,1) \quad w_3=(3,1).
+\]
+
+\begin{solution}
+
+\soln
+Compute $A$, the matrix of $L$, using Equation~\eqref{e:defA}:
+\[ A = (w_1^t|w_2^t|w_3^t)(v_1^t|v_2^t|v_3^t)^{-1} =
+\left(\begin{array}{rrr} -1 & 0 & 3 \\ 0 & 1 & 1 \end{array}\right)
+\matthree{1}{2}{-2}{0}{-1}{1}{2}{1}{0}^{-1} =
+\left(\begin{array}{rrr} -7 & -11 & 3 \\ -4 & -7 & 2
+\end{array}\right). \]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{10}{8.1}\begin{exercise}  \label{A8.1.1}
+Show that
+\[
+\frac{d^2}{dt^2}:{\cal P}_4\to{\cal P}_2
+\]
+is a linear mapping.  Then compute bases for the null space  
+and range of $\frac{d^2}{dt^2}$.
+
+\begin{solution}
+
+\soln Let $L$ be a transformation that maps $p(t) \mapsto
+\frac{d^2p}{dt^2}(t)$.  For 
+\[
+p(t) =  p_0 + p_1t + p_2t^2 + p_3t^3+p_4t^4,
+\]
+then
+\[
+L(p(t)) = 2p_2 + 6p_3t + 12p_4t^2,
+\]
+so $L$ is a mapping $L:{\cal P}_4 \rightarrow {\cal P}_2$.  From calculus, we
+know that, for any functions $f$ and $g$:
+\[ 
+\frac{d^2}{dt^2}(f + g)(t) = \frac{d^2}{dt^2}f(t) + \frac{d^2}{dt^2}g(t), 
+\]
+and that, for any scalar $c$:
+\[ 
+\frac{d^2}{dt^2}(cf)(t) = c\frac{d^2}{dt^2}f(t). 
+\]
+It follows that $L$ is a linear mapping.  The null space is
+\[
+\{p\in  {\cal P}_4: p_2=p_3=p_4=0\} 
+\]
+with basis $\{1,t\}$ and 
+\[
+\text{range}(L) =\{2p_2 + 6p_3 t +12 p_4 t^2\} 
+\]
+with basis $\{1,t,t^2\}$.
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{1}{8.2}\begin{exercise} \label{c5.8.1}
+The $3\times 3$ matrix
+\[
+A = \left(\begin{array}{rrr} 1 & 2 & 5\\ 2 & -1 & 1\\ 3 & 1 & 6
+\end{array}\right)
+\]
+has rank two.  Let $r_1,r_2,r_3$ be the rows of $A$ and
+$c_1,c_2,c_3$ be the columns of $A$. Find scalars $\alpha_j$ and
+$\beta_j$ such that
+\begin{eqnarray*}
+\alpha_1r_1+\alpha_2r_2+\alpha_3r_3 & = & 0 \\
+\beta_1c_1+\beta_2c_2+\beta_3c_3 & = & 0.
+\end{eqnarray*}
+
+\begin{solution}
+
+\ans The possible choices for the scalars $\alpha_j$ are
+$\alpha = (\alpha_1,\alpha_2,\alpha_3) = \alpha_3(-1,-1,1)$ and
+the possible choices for the scalars $\beta_j$ are $\beta = 
+(\beta_1,\beta_2,\beta_3) = \beta_3(-\frac{7}{5},-\frac{9}{5},1)$.
+
+\soln Find $A^t$ and solve by row reduction the equation
+$A^t\alpha = 0$.  To find the scalars $\beta_j$, solve $A\beta =
+0$.  These equations yield
+\[
+-r_1 - r_2 + r_3 = 0 \AND -7c_1 - 9c_2 + 5c_3 = 0.
+\]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{1}{8.3}\begin{exercise} \label{c7.1.1}
+Let
+\[
+w_1 = (1,4) \AND w_2 = (-2,1).
+\]
+Find the coordinates of $v=(-1,32)$ in the ${\cal W}$ basis.
+
+\begin{solution}
+
+\ans $[v]_{\cal W} = (7,4)$.
+
+\soln Find the scalars $\alpha_1$ and $\alpha_2$ such that $v = \alpha_1w_1
++ \alpha_2w_2$.  That is, solve the linear system
+\[ \begin{array}{rrrrr}
+\alpha_1 & - & 2\alpha_2 & = & -1 \\
+4\alpha_1 & + & \alpha_2 & = & 32 \end{array} \]
+to obtain $(\alpha_1,\alpha_2) = (7,4)$, the coordinates
+of $v$ in the ${\cal W}$ basis.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{2}{8.3}\begin{exercise} \label{c7.3.1}
+Let $w_1=(1,2)$ and $w_2=(0,1)$ be a basis for $\R^2$.  Let
+$L_A:\R^2\to\R^2$ be the linear map given by the matrix
+\[
+A=\mattwo{2}{1}{-1}{0}
+\]
+in standard coordinates.  Find the matrix $[L]_{\cal W}$.
+
+\begin{solution}
+
+\soln From Section~\ref{S:coordinates},
+\[
+[L]_{\cal W} = (w_1^t|w_2^t)^{-1}L(w_1^t|w_2^t) =
+\mattwo{1}{0}{-2}{1}\mattwo{2}{1}{-1}{0}\mattwo{1}{0}{2}{1} =
+\mattwo{4}{1}{-9}{-2}.
+\]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\matlabproblemlabel
+
+\exerciselabel{6}{8.3}\begin{computerExercise} \label{c7.1.7}
+Let
+\begin{matlabEquation}\label{MATLAB:35}
+\begin{array}{ccl}
+w_1 & = & (0.2,-1.3,0.34,-1.1)\\
+w_2 & = & (0.5,-0.6,0.7,0.8)\\
+w_3 & = & (-1.0,1.0,2.0,4.5) \\
+w_4 & = & (-5.1,0.0,1.6,-1.7) \end{array}
+\end{matlabEquation}
+be a basis ${\cal W}$ for $\R^4$.  Find $[v]_{\cal W}$ where
+$v=(1.7,2.3,1.0,-5.0)$.
+
+\begin{solution}
+
+\ans $[v]_{\cal W} \approx (-58.3171, 79.7282, -25.6754, 10.2308)$.
+
+\soln Using \Matlab, create the augmented matrix
+{\tt [w1' w2' w3' w4' v']} and row reduce to obtain
+\begin{verbatim}
+ans =
+    1.0000         0         0         0  -58.3171
+         0    1.0000         0         0   79.7282
+         0         0    1.0000         0  -25.6754
+         0         0         0    1.0000   10.2308
+\end{verbatim}
+
+\end{solution}
+\end{computerExercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

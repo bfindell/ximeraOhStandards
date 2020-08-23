@@ -1,0 +1,517 @@
+\documentclass{article}
+
+\input{preamble}
+
+%\newcommand{\MATLAB}{{\bf Matlab. }}
+
+\title{Math 2568 Homework 8}
+\author{\phantom{Dr. Golubitsky}}
+\date{Due: Monday, October 21, 2019}
+
+\makeatletter
+\newlabel{c5.1.4a}{{4}{271}}
+\newlabel{c5.1.4f}{{10}{272}}
+\newlabel{c5.2.1a}{{1}{279}}
+\newlabel{c5.2.1d}{{4}{280}}
+\newlabel{c5.2.2a}{{5}{280}}
+\newlabel{c5.2.2d}{{8}{281}}
+\newlabel{c5.2.6a}{{16}{284}}
+\newlabel{c5.2.6d}{{19}{285}}
+\newlabel{c5.3.4a}{{6}{293}}
+\newlabel{c5.3.4c}{{8}{293}}
+\newlabel{c5.4.8a}{{9}{300}}
+\newlabel{c5.4.8c}{{11}{300}}
+\newlabel{extendindep}{{5.6.4}{313}}
+\newlabel{A5.6.4}{{15}{322}}
+\newlabel{A5.6.9}{{20}{322}}
+\makeatother
+\begin{document}
+\maketitle
+
+
+\problemlabel
+
+\noindent You are given a vector space $V$ and a subset $W$.  For each pair, decide whether or not $W$ is a subspace of $V$, and explain why.
+
+\exerciselabel{8}{5.1}\begin{exercise} \label{c5.1.4g}
+$V=\CCone$ and $W$ consists of functions
+     $x(t)\in\CCone$ satisfying $\int_{-2}^4x(t)dt =0$.
+
+\begin{solution}
+$W$ is a subspace of $V$, since $W$ is closed under
+addition and scalar multiplication.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+
+
+\exerciselabel{16}{5.1}\begin{exercise} \label{c5.1.6}
+Let $V$ be a vector space and let $W_1$ and $W_2$ be subspaces.
+Show that the intersection $W_1\cap W_2$ is also a subspace of $V$.
+
+\begin{solution}
+
+The subset $W_1 \cap W_2$ is a subspace of $V$.  To show that this
+subset is closed under addition and scalar multiplication, 
+let $x$ and $y$ be vectors in $W_1 \cap W_2$.  It follows that
+$x,y \in W_1$ and $x,y \in W_2$.  Therefore, by the
+definition of a subspace, $x + y \in W_1$ and $x + y \in W_2$, so
+$x + y \in W_1 \cap W_2$.  Also by definition, $rx \in W_1$ and
+$rx \in W_2$, for some scalar $r$, so $rx \in W_1 \cap W_2$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\noindent A single equation in three variables is given.  For each equation write the subspace of solutions in $\R^3$ as the span of two vectors in $\R^3$.
+
+\exerciselabel{2}{5.2}\begin{exercise} \label{c5.2.1b}
+$x - y + 3z = 0$.
+
+\begin{solution}
+\ans The subspace of solutions can be spanned by the vectors 
+$(1,1,0)^t$ and $(-3,0,1)^t$.
+
+\soln All solutions to $x - y + 3z = 0$ can be written in the form
+\[
+\vecthree{x}{y}{z} = \cvecthree{y-3z}{y}{z}
+= y\vecthree{1}{1}{0} + z\vecthree{-3}{0}{1}.
+\]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\noindent Each of the given matrices is in reduced echelon form.  Write solutions of the corresponding homogeneous system of linear equations as a span of vectors.
+
+\exerciselabel{6}{5.2}\begin{exercise} \label{c5.2.2b}
+$B = \left(\begin{array}{rrrr} 1 & 3 & 0 & 5 \\
+	0 & 0 & 1 & 2 \end{array}\right)$.
+
+\begin{solution}
+
+\ans The subspace of solutions to $Bx = 0$ is spanned by the vectors
+\[
+(-3,1,0,0)^t \AND (-5,0,-2,1)^t.
+\]
+
+\soln Let $x = (x_1,x_2,x_3,x_4)$ be a solution to $Bx = 0$.  All
+solutions to this equation have the form
+\[
+\left(\begin{array}{r} x_1 \\ x_2 \\ x_3 \\ x_4 \end{array}\right)
+= \left(\begin{array}{c} -3x_2 - 5x_4 \\ x_2 \\ -2x_4 \\ x_4
+\end{array}\right) = x_2\left(\begin{array}{r} -3 \\ 1 \\ 0 \\ 0
+\end{array}\right) + x_4\left(\begin{array}{r} -5 \\ 0 \\ -2 \\ 1
+\end{array}\right).
+\]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\noindent Let $W\subset\CCone$ be the subspace spanned by the two polynomials $x_1(t) = 1$ and $x_2(t)=t^2$.  For the given function $y(t)$ decide whether or not $y(t)$ is an element of $W$.  Furthermore, if $y(t)\in W$, determine whether the set $\{y(t),x_2(t)\}$ is a spanning set for $W$.
+
+\exerciselabel{16}{5.2}\begin{exercise} \label{c5.2.6a}
+$y(t) = 1-t^2$,
+
+\begin{solution}
+
+\ans The function $y(t) = 1 - t^2$ is an element of $W$ and the set
+$\{y(t),x_2(t)\}$ is a spanning set for $W$.
+
+
+
+\soln The space $W$ equals $\Span\{x_1(t),x_2(t)\}$ where $x_1(t)=1$ and 
+$x_2(t)=t^2$.  To show that $y(t)$ is an element of $W$, let
+$a = 1$ and $b = -1$, and compute
+\[
+ax_1(t) + bx_2(t) = x_1(t) - x_2(t) = 1 - t^2 = y(t). 
+\]
+To show that $\{y(t),x_2(t)\}$ is a spanning set for $W$, rewrite every
+linear combination of $x_1(t)$ and $x_2(t)$ in terms of $y(t)$ and $x_2(t)$, 
+as follows:
+\[ 
+ax_1(t) + bx_2(t) = a + bt^2 = a(1 - t^2) + (a + b)t^2
+= ay(t) + (a + b)x_2(t). 
+\]
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{24}{5.2}\begin{exercise} \label{c5.2.10}
+Let $Ax=b$ be a system of $m$ linear equations in $n$ unknowns,
+and let $r=\rank(A)$ and $s=\rank(A|b)$.  Suppose that this system
+has a unique solution.  What can you say about the relative
+magnitudes of $m,n,r,s$?
+
+\begin{solution}
+
+\ans The relationship of the constants is $m \geq n = r = s$.
+
+\soln The rank of matrix $A$ cannot be greater than the rank of matrix
+$(A|b)$, since $(A|b)$ consists of $A$ plus one column.  The rank of $A$
+is the number of pivots in the row reduced matrix.  $(A|b)$ can be row 
+reduced through the same operations, and will have either the same number
+of pivots as $A$ or, if there is a pivot in the last column, one more
+pivot than $A$.  Since the system has a unique solution, it is consistent,
+and therefore $(A|b)$ cannot have a pivot in the $(n + 1)^{st}$ column, so
+$r = \rank(A) = \rank(A|b) = s$.
+
+\para The set of solutions is parameterized by $n - r$ parameters,
+where $n$ is the number of columns of $A$.  Since there is a unique
+solution, the set of solutions is parameterized by $0$ parameters,
+so $n = r$.
+
+\para The number $m$ of rows of the matrix must be greater than or
+equal to $n$ in order for the system to have a unique solution, since
+there must be $n$ pivots, and each pivot must be in a separate row.
+
+
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\matlabproblemlabel
+
+\noindent Let $W\subset\R^5$ be the subspace spanned by the vectors \begin{matlabEquation}\label{MATLAB:65}      w_1=(2,0,-1,3,4),\quad w_2=(1,0,0,-1,2),\quad w_3=(0,1,0,0,-1). \end{matlabEquation} Use \Matlab to decide whether the given vectors are elements of $W$.
+
+\exerciselabel{7}{5.3}\begin{computerExercise} \label{c5.3.4b}
+$v_2=(-1,12,3,-14,-1)$.
+
+\begin{solution}
+\ans Vector $v_2$ is not an element of $W$.
+
+\soln Create the augmented matrix {\tt aug2 = [A v2']}.  Row reducing
+{\tt aug2} yields
+\begin{verbatim}
+ans =
+     1     0     0     0
+     0     1     0     0
+     0     0     1     0
+     0     0     0     1
+     0     0     0     0
+\end{verbatim}
+There is a pivot point in the last column, so the linear system
+$aw_1 + bw_2 + cw_3 = v_2$ is inconsistent.
+
+\end{solution}
+\end{computerExercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{6}{5.4}\begin{exercise} \label{c5.4.5}
+Show that the polynomials $p_1(t) = 2+t$, $p_2(t) = 1+t^2$, and
+$p_3(t) = t-t^2$ are linearly independent vectors in the vector
+space $\CCone$.
+
+\begin{solution}
+
+\ans The polynomials $p_1(t) = 2 + t$, $p_2(t) = 1 + t^2$, and $p_3(t) =
+t - t^2$ are linearly independent in $\CCone$.  
+
+\soln We can determine this
+by noting that the polynomials are linearly dependent if there exists
+a nonzero vector $r = (r_1,r_2,r_3)$ such that $r_1p_1 + r_2p_2 +
+r_3p_3 = 0$.  It is convenient to represent each polynomial as a
+vector $(a,b,c) = p(t) = a + bt + ct^2$.  Thus, $p_1(t) = (2,1,0)$, 
+$p_2(t) = (1,0,1)$, and $p_3(t) = (0,1,-1)$.  Solve the homogeneous
+system $Ar = 0$, where $A$ is the matrix whose columns are $p_1$,
+$p_2$, and $p_3$, by row reduction.
+\[ \matthree{2}{1}{0}{1}{0}{1}{0}{1}{-1} \longrightarrow
+\matthree{1}{0}{0}{0}{1}{0}{0}{0}{1}. \]
+Therefore, there are no nonzero values of $r$ for which $r_1p_1 + 
+r_2p_2 + r_3p_3 = 0$, and the polynomials are linearly independent.
+
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{8}{5.4}\begin{exercise} \label{c5.4.7}
+Suppose that the three vectors $u_1,u_2,u_3\in\R^n$ are linearly
+independent.  Show that the set
+\[
+\{u_1+u_2, u_2+u_3,u_3+u_1\}
+\]
+is also linearly independent.
+
+\begin{solution}
+
+To show that the vectors $u_1 + u_2$, $u_2 + u_3$ and $u_3 + u_1$
+are linearly independent, we assume that there exist scalars $r_1$,
+$r_2$, $r_3$ such that
+\[ r_1(u_1 + u_2) + r_2(u_2 + u_3) + r_3(u_3 + u_1) = 0. \]
+We then prove that $r_1 = r_2 = r_3 = 0$, as follows.
+Use distribution to obtain
+\[ (r_1 + r_3)u_1 + (r_1 + r_2)u_2 + (r_2 + r_3)u_3 = 0. \]
+Since the set $\{u_1,u_2,u_3\}$ is linearly independent,
+\[ \begin{array}{rrrrrcl}
+r_1 & & & + & r_3 & = & 0 \\
+r_1 & + & r_2 & & & = & 0 \\
+& & r_2 & + & r_3 & = & 0. \end{array} \]
+Solving this system yields $r_1 = r_2 = r_3 = 0$,
+so the set $\{u_1 + u_2,u_2 + u_3,u_3 + u_1\}$ is linearly
+independent.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\matlabproblemlabel
+
+\noindent Determine whether the given sets of vectors are linearly independent or linearly dependent.
+
+\exerciselabel{9}{5.4}\begin{computerExercise} \label{c5.4.8a}
+\begin{matlabEquation}\label{MATLAB:67}
+v_1 = (2,1,3,4) \quad v_2 = (-4,2,3,1) \quad v_3 = (2,9,21,22)
+\end{matlabEquation}
+
+\begin{solution}
+\ans The set $\{v_1,v_2,v_3\}$ is linearly dependent.
+
+\soln The set is linearly dependent if there exist scalars $r_1$, $r_2$,
+and $r_3$ such that $r_1v_1 + r_2v_2 + r_3v_3 = 0$.  Create a matrix
+{\tt A} whose columns are $v_1$, $v_2$ and $v_3$.  Then row reduce
+{\tt A} to solve the homogeneous system $Ar = 0$.  Specifically, row
+reducing the matrix {\tt A = [v1 v2 v3]} yields
+\begin{verbatim}
+ans =
+     1     0     5
+     0     1     2
+     0     0     0
+     0     0     0
+\end{verbatim}
+So $-5v_1 - 2v_2 + v_3 = 0$.
+
+\end{solution}
+\end{computerExercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace*{-0.1in}
+
+
+\matlabproblemlabel
+
+\noindent Determine whether the given sets of vectors are linearly independent or linearly dependent.
+
+\exerciselabel{11}{5.4}\begin{computerExercise} \label{c5.4.8c}
+\begin{matlabEquation}\label{MATLAB:69}
+x_1 = (3,4,1,2,5) \quad x_2 = (-1,0,3,-2,1)\quad x_3 = (2,4,-3,0,2)
+\end{matlabEquation}
+
+\begin{solution}
+\ans The set $\{x_1,x_2,x_3\}$ is linearly independent.
+
+\soln The matrix {\tt A} associated to the set $\{x_1,x_2,x_3\}$ row
+reduces to
+\begin{verbatim}
+ans =
+     1     0     0
+     0     1     0
+     0     0     1
+     0     0     0
+     0     0     0
+\end{verbatim}
+In this case, there are no nonzero solutions to
+$r_1x_1 + r_2x_2 + r_3x_3 = 0$.
+ 
+\end{solution}
+\end{computerExercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{6}{5.5}\begin{exercise} \label{c5.5.6}
+Let ${\cal P}_3$ be the vector space of polynomials of degree at
+most three in one variable $t$.  Let $p(t)=t^3+a_2t^2+a_1t+a_0$ where
+$a_0,a_1,a_2\in\R$ are fixed constants.  Show that
+\[
+\left\{ p, \frac{dp}{dt}, \frac{d^2p}{dt^2}, \frac{d^3p}{dt^3}\right\}
+\]
+is a basis for ${\cal P}_3$.
+
+\begin{solution}
+
+First, note that the dimension of ${\cal P}^3$ is $4$.  We can show
+this by noting that the $4$ polynomials $b_1(t) = t^3$, $b_2(t) =
+t^2$, $b_3(t) = t$, and $b_4(t) = 1$ are linearly independent and
+span ${\cal P}^3$.  The dimension of a space is equal to the number of
+linearly independent vectors in a spanning set for that space.
+Therefore, $\{p, \frac{dp}{dt}, \frac{d^2p}{dt^2}, \frac{d^3p}{dt^3}\}$
+is a basis if the polynomials are linearly independent.
+
+\para The general polynomial of degree $3$ has the form $q(t) =
+a_3t^3 + a_2t^2 + a_1t + a_0$.  We can identify $q(t)$ by the vector 
+$(a_3,a_2,a_1,a_0)$.  Thus, the set
+\[
+\begin{array}{rcl}
+\dps p(t) & = & t^3 + a_2t^2 + a_1t + a_0 \\
+\dps \frac{dp}{dt}(t) & = & 3t^2 + 2a_2t + a_1 \\
+\dps \frac{d^2p}{dt^2}(t) & = & 6t + 2a_2 \\
+\dps \frac{d^3p}{dt^3}(t) & = & 6 \end{array}
+\]
+is identified with the matrix $A$, whose columns are 
+$\frac{dp}{dt}$, $\frac{d^2p}{dt^2}$, and $\frac{d^3p}{dt^3}$:
+\[ A = \left(\begin{array}{cccc} 1 & 0 & 0 & 0 \\
+a_2 & 3 & 0 & 0 \\ a_1 & 2a_2 & 6 & 0 \\ a_0 & a_1 & 2a_2 & 6
+\end{array}\right). \]
+The matrix is lower triangular and therefore row reduces to $I_4$.  So
+this set of polynomials is linearly independent and spans ${\cal P}^3$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\vspace*{-0.4in}
+
+\matlabproblemlabel
+
+\exerciselabel{11}{5.6}\begin{computerExercise} \label{c5.6.6}
+Find a basis for the subspace of $\R^5$ spanned by
+\begin{matlabEquation}\label{MATLAB:63}
+\begin{array}{rcl}
+u_1 & = & (1,1,0,0,1) \\
+u_2 & = & (0,2,0,1,-1)  \\
+u_3 & = & (0,-1,1,0,2)   \\
+u_4 & = & (1,4,1,2,1)  \\
+u_5 & = & (0,0,2,1,3).
+\end{array}
+\end{matlabEquation}
+
+\begin{solution}
+
+\ans The vectors $(1,0,0,-\frac{1}{2},\frac{3}{2})$, $(0,1,0,\frac{1}{2},
+-\frac{1}{2})$, and $(0,0,1,\frac{1}{2},\frac{3}{2})$ form a basis
+for the subspace spanned by $u_1, \dots ,u_5$.
+
+\soln Row reduce the matrix {\tt M}, whose
+rows are $u_1$, $u_2$, $u_3$, $u_4$ and $u_5$.  According to 
+Lemma~\ref{extendindep}, the rows of the
+reduced echelon matrix form a basis for $\{u_1,\dots ,u_5\}$.  The
+command {\tt rref(M)} yields:
+\begin{verbatim}
+ans =
+    1.0000         0         0   -0.5000    1.5000
+         0    1.0000         0    0.5000   -0.5000
+         0         0    1.0000    0.5000    1.5000
+         0         0         0         0         0
+         0         0         0         0         0
+\end{verbatim}
+\end{solution}
+\end{computerExercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace*{-0.3in}
+
+\problemlabel
+
+In Exercises~\ref{A5.6.4}-\ref{A5.6.9} decide whether the statement is true or false, and explain your answer.
+
+\exerciselabel{15}{5.6}\begin{exercise}  \label{A5.6.4}
+Every set of three vectors in $\R^3$ is a basis for $\R^3$.
+\begin{solution}
+\ans False  
+
+\soln
+The vectors could be linearly independent. For example $\{e_1,e_2,e_1+e_2\}$ is not a basis for $\R^3$.
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace*{-0.2in}
+
+\problemlabel
+
+In Exercises~\ref{A5.6.4}-\ref{A5.6.9} decide whether the statement is true or false, and explain your answer.
+
+\exerciselabel{18}{5.6}\begin{exercise}  \label{A5.6.7}
+If $\{v_1,v_2,v_3\}$ is a basis for $\R^3$, the only subspaces of $R^3$ of dimension one are $\text{span}\{v_1\}, \text{span}\{v_2\}$, and $\text{span}\{v_3\}$. 
+\begin{solution}
+\ans False 
+\soln For example, $\{e_1,e_2,e_3\}$ is a basis for $\R^3$ and $\text{span}\{e_1+e_2\}$ does not equal the $x$, $y$, or $z$-axes.
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

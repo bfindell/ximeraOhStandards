@@ -1,0 +1,496 @@
+\documentclass{article}
+
+\input{preamble}
+
+\newcommand{\MATLAB}{{\bf Matlab. }}
+
+\title{Math 2568 Homework 6}
+\author{\phantom{Dr. Golubitsky}}
+\date{Due: Monday, October 7, 2019}
+
+
+\makeatletter
+\newlabel{c3.1.ba}{{1}{180}}
+\newlabel{c3.1.bd}{{4}{182}}
+\newlabel{E:uncoupleda}{{3}{199}}
+\newlabel{E:uncoupledc}{{5}{199}}
+\newlabel{lin2}{{4.3.2}{194}}
+\newlabel{c3.5.5a}{{5}{208}}
+\newlabel{c3.5.5d}{{8}{210}}
+\newlabel{c6.4.1a}{{2}{229}}
+\newlabel{c6.4.1d}{{5}{229}}
+\newlabel{c4.10A.1a}{{1}{239}}
+\newlabel{c4.10A.1d}{{4}{241}}
+\newlabel{c5.1.4a}{{4}{271}}
+\newlabel{c5.1.4f}{{10}{272}}
+\newlabel{c5.1.5a}{{11}{272}}
+\newlabel{c5.1.5e}{{15}{272}}
+\newlabel{S:IVP&E}{{4.5}{211}}
+\newlabel{e:solnODE}{{4.5.6}{213}}
+\makeatother
+\begin{document}
+\maketitle
+
+
+\problemlabel
+
+\noindent Determine whether or not each of the given functions $x_1(t)$ and $x_2(t)$ is a solution  to the given differential equation.
+
+\exerciselabel{2}{4.1}\begin{exercise}  \label{c3.1.bb}
+ODE:\quad $\frac{\dps dx}{\dps dt} = x + e^t$.
+
+Functions:\quad $x_1(t)=te^t \AND x_2(t)= 2e^t$.
+
+\begin{solution}
+
+\ans The function $x_1(t)$ is a solution to the differential equation;
+the function $x_2(t)$ is not a solution.
+
+\soln Compute
+\[
+\frac{d}{dt}(x_1) = \frac{d}{dt}(te^t) = te^t + e^t, \AND
+\frac{dx_1}{dt} = x_1 + e^t = te^t + e^t.
+\]
+Thus, $x_1(t)$ is a solution to the differential equation.  Then compute
+\[
+\frac{d}{dt}(x_2) = \frac{d}{dt}(2e^t) = 2e^t, \AND
+\frac{dx_2}{dt} = x_2 + e^t = 2e^t + e^t = 3e^t.
+\]
+Thus, $\frac{d}{dt}(x_2) \neq \frac{dx_2}{dt}$, so $x_2(t)$ is not a
+solution to the differential equation.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+
+
+\exerciselabel{5}{4.1}\begin{exercise} \label{c3.1.1}
+Solve the differential equation
+\[
+\frac{dx}{dt} = 2x,
+\]
+where $x(0)=1$.  At what time $t_1$ will $x(t_1)=2$?
+
+\begin{solution}
+
+\ans The solution for the given initial value problem is
+$\dps x(t) = e^{2t}$.  From this equation, we find that $x(t_1) = 2$
+when $t_1 = \frac{1}{2}\ln 2$.
+
+\soln Note that $\frac{dx}{dt} = \lambda x$ implies $x(t) =
+x_0e^{\lambda t}$.  In this case, $\frac{dx}{dt} = 2x$, so
+$\lambda = 2$, and $x_0 = 1$, so $x(t) = e^{2t}$.  In order to
+find $t_1$, substitute into the formula for $x(t)$, obtaining
+$e^{2t_1} = 2$ and solve for $t_1$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\noindent Consider the uncoupled system of differential equations \eqref{lin2}. For each choice of $a$ and $d$, determine whether the origin is a saddle, source, or sink.
+
+\exerciselabel{3}{4.3}\begin{exercise} \label{E:uncoupleda}
+$a=1$ and $d=-1$.
+
+\begin{solution}
+
+\ans The origin is a saddle.
+
+\soln This uncoupled system is of the form
+\[
+\begin{array}{rcl}
+\frac{dx}{dt}(t) & = & Ax(t) \\
+\frac{dy}{dt}(t) & = & Dy(t)\end{array}
+\]
+If $AD < 0$, then the origin is a saddle.  If $A < 0$ and
+$D < 0$, then the origin is a sink.  If $A > 0$ and $D > 0$, then
+the origin is a source.  In this case, $AD = -1 < 0$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+
+\problemlabel
+
+\noindent Determine which of the function pairs $(x_1(t),y_1(t))$ and $(x_2(t),y_2(t))$ are solutions to the given system of ordinary differential equations.
+
+\exerciselabel{6}{4.4}\begin{exercise} \label{c3.5.5b}
+The ODE is:
+\begin{eqnarray*}
+\dot{x} & = & 2x - 3y  \\
+\dot{y} & = & x - 2y.
+\end{eqnarray*}
+The pairs of functions are:
+\[
+(x_1(t),y_1(t)) = e^t(3,1)  \AND (x_2(t),y_2(t)) = (e^{-t},e^{-t}).
+\]
+
+\begin{solution}
+\ans Both function pairs are solutions to the given system.
+
+\soln To determine whether $(x_1(t),y_1(t)) = (3e^t, e^t)$ is
+a solution to the system, compute the left hand sides of the equations:
+\[
+\frac{dx_1}{dt}(t) = \frac{d}{dt}(3e^t) = 3e^t \AND
+\frac{dy_1}{dt}(t) = \frac{d}{dt}(e^t) = e^t.
+\]
+Then compute the right hand sides of the equations:
+\[
+2x_1(t) - 3y_1(t) = 2(3e^t) - 3e^t = 3e^t \AND
+x_1(t) - 2y_1(t) = 3e^t - 2e^t = e^t.
+\]
+Since the left hand side of each equation equals the right hand side, the
+equations are consistent, and the pair of functions is a solution.
+
+\para Similarly, to determine whether $(x_2(t),y_2(t)) = (e^{-t},e^{-t})$
+is a solution to the system, compute the left hand sides of the equations:
+\[
+\frac{dx_2}{dt}(t) = \frac{d}{dt}(e^{-t}) = -e^{-t} \AND
+\frac{dy_2}{dt}(t) = \frac{d}{dt}(e^{-t}) = -e^{-t}.
+\]
+Then compute the right hand sides of the equations:
+\[
+2x_2(t) - 3y_2(t) = 2e^{-t} - 3e^{-t} = -e^{-t} \AND
+x_2(t) - 2y_2(t) = e^{-t} - 2e^{-t} = -e^{-t}.
+\]
+Since the left hand side of each equation equals the right hand side, the
+equations are consistent, and the pair of functions is a solution.
+
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{1}{4.5}\begin{exercise} \label{c4.1.5}
+Write the system of linear ordinary differential equations
+\begin{eqnarray*}
+\frac{dx_1}{dt}(t) & = & 4x_1(t) + 5x_2(t) \\
+\frac{dx_2}{dt}(t) & = & 2x_1(t) - 3x_2(t)
+\end{eqnarray*}
+in matrix form.
+
+\begin{solution}
+\ans
+\arraystart
+\[
+\left(\begin{array}{r} \dps\frac{dx_1}{dt}(t) \\ 
+\dps\frac{dx_2}{dt}(t)\end{array}\right) =
+\left(\begin{array}{rr} 4 & 5 \\ 2 & -3\end{array}\right)
+\left(\begin{array}{r} x_1(t) \\ x_2(t)\end{array}\right)
+\]
+\arrayfinish
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\problemlabel
+
+\exerciselabel{4}{4.5}\begin{exercise} \label{c4.5.2}
+Find a solution to
+\[
+\dot{X}(t)=CX(t)
+\]
+where
+\[
+C=\mattwo{1}{-1}{-1}{1}
+\]
+and
+\[
+X(0)=\vectwo{2}{1}.
+\]
+{\bf Hint:} Observe that
+\[
+\vectwo{1}{1} \AND \vectwo{1}{-1}
+\]
+are eigenvectors of $C$.
+
+\begin{solution}
+
+\ans 
+\[
+X(t) = \frac{3}{2}\vectwo{1}{1} + \frac{1}{2}e^{2t}\vectwo{1}{-1}.
+\]
+
+\soln Note that if $Cv = \lambda v$, then $X(t) = e^{\lambda t}v$ is a
+solution to $\dot{X}(t) = CX(t)$.  Let
+\[
+v_1 = \vectwo{1}{1} \AND v_2 = \vectwo{1}{-1}.
+\]
+The eigenvalues corresponding to $v_1$ and $v_2$ are
+$\lambda_1 = 0$ and $\lambda_2 = 2$.  This can be verified
+by calculating $Cv_1 = 0$ and $Cv_2 = 2v_2$.
+So,
+\[
+X(t) = \vectwo{1}{1} \AND X(t) = e^{2t}\vectwo{1}{-1}
+\]
+are both solutions to $\dot{X}(t) = CX$.  By the principle of
+superposition,
+\[
+X(t) = \alpha\vectwo{1}{1} + \beta e^{2t}\vectwo{1}{-1}
+\]
+is also a solution.
+Substitute the given the initial condition into the equation to obtain
+\[
+\vectwo{2}{1} = X(0) = \alpha\vectwo{1}{1} + \beta\vectwo{1}{-1}.
+\]
+Now, solve the linear system
+\[
+\begin{array}{rrrrr}
+2 & = & \alpha & + & \beta \\
+1 & = & \alpha & - & \beta \end{array}
+\]
+to find that $\alpha = \frac{3}{2}$ and $\beta = \frac{1}{2}$.
+
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\noindent Compute the determinant, trace, and characteristic polynomials for the given  $2\times 2$ matrix.
+
+\exerciselabel{3}{4.6}\begin{exercise} \label{c6.4.1b}
+$\mattwo{2}{13}{-1}{5}$.
+
+\begin{solution}
+The determinant of the matrix is $23$, the trace is $7$, and
+the characteristic polynomial is $p(\lambda)=\lambda^2-7\lambda+23$.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\noindent Find the solution to the system of differential equations $\dot{X} = CX$ satisfying $X(0)=X_0$.
+
+\exerciselabel{3}{4.7}\begin{exercise}  \label{c4.10A.1c}
+$C = \mattwo{-3}{2}{-2}{2}$ \AND $X_0 = \vectwo{-1}{3}$.
+
+\begin{solution}
+\ans The solution to $\dot{X} = CX$ satisfying this
+initial condition is
+\[
+X(t) = \frac{7}{3}e^t\vectwo{1}{2} - \frac{5}{3}e^{-2t}\vectwo{2}{1}
+= \frac{1}{3}\cvectwo{8e^t - 10e^{-2t}}{16e^t - 5e^{-2t}}.
+\]
+
+\soln First, find the eigenvalues of $C$, which are the roots of the
+characteristic polynomial
+\[
+p_C(\lambda) = \lambda^2 - \trace(C)\lambda + \det(C) =
+\lambda^2 + \lambda - 2 = (\lambda - 1)(\lambda + 2).
+\]
+So the eigenvalues are: $\lambda_1 = 1$ and $\lambda_2 = -2$.
+To find the eigenvector associated to each eigenvalue, solve
+the equation $(C - \lambda_jI_2)v_j = 0$ for $j = 1$ and $j = 2$.  Solve
+\[
+\left(\mattwo{-3}{2}{-2}{2} - \mattwo{1}{0}{0}{1}\right)v_1 =
+\mattwo{-4}{2}{-2}{1}v_1 = 0
+\]
+to obtain $v_1 = (1,2)^t$ and solve
+\[
+\left(\mattwo{-3}{2}{-2}{2} + \mattwo{2}{0}{0}{2}\right)v_2 =
+\mattwo{-1}{2}{-2}{4}v_2 = 0
+\]
+to obtain $v_2 = (2,1)^t$.  We can then write the general solution
+\[
+X(t) = \alpha_1e^{\lambda_1 t}v_1 + \alpha_2e^{\lambda_2 t}v_2
+= \alpha_1e^t\vectwo{1}{2} + \alpha_2e^{-2t}\vectwo{2}{1}.
+\]
+From this formula, find $\alpha_1$ and $\alpha_2$ by solving
+\[
+\vectwo{-1}{3} = X(0) = \alpha_1\vectwo{1}{2} + \alpha_2\vectwo{2}{1} =
+\cvectwo{\alpha_1 + 2\alpha_2}{2\alpha_1 + \alpha_2}.
+\]
+Solving the linear system
+\[
+\begin{array}{rrrrr}
+\alpha_1 & + & 2\alpha_2 & = & -1 \\
+2\alpha_1 & + & \alpha_2 & = & 3
+\end{array}
+\]
+we obtain $\alpha_1 = \frac{7}{3}$ and $\alpha_2 = -\frac{5}{3}$
+and find the solution to the differential equation.
+
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\problemlabel
+
+\noindent You are given a vector space $V$ and a subset $W$.  For each pair, decide whether or not $W$ is a subspace of $V$, and explain why.
+
+\exerciselabel{5}{5.1}\begin{exercise} \label{c5.1.4b}
+$V=\R^3$ and $W$ consists of vectors in $\R^3$
+     that have a $1$ in their first component.
+
+\begin{solution}
+\ans $W$ is not a subspace of $V$.
+
+\soln The subset $W$ is closed neither under addition nor under scalar
+multiplication.  For example, let $w_1 = (1,4,2)$ and $w_2 = (1,-1,3)$
+be elements of $W$.  Then,
+\[
+w_1 + w_2 = (1,4,2) + (1,-1,3) = (2,3,5)
+\]
+which is not an element of $W$.
+
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\noindent You are given a vector space $V$ and a subset $W$.  For each pair, decide whether or not $W$ is a subspace of $V$, and explain why.
+
+\exerciselabel{7}{5.1}\begin{exercise} \label{c5.1.4c}
+$V=\R^2$ and $W$ consists of vectors in $\R^2$
+     for which the sum of the components is $0$.
+
+\begin{solution}
+$W$ is a subspace of $V$, since $W$ is closed under
+addition and scalar multiplication.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\noindent Which of the sets $S$ are subspaces?
+
+\exerciselabel{13}{5.1}\begin{exercise} \label{c5.1.5c}
+$S = \{(x,y)\in\R^2: (x,y) \mbox{ is on the line through }
+(1,1) \mbox{ with slope } 1\}$.
+
+\begin{solution}
+The set $S$ is a subspace, since it is closed under
+addition and scalar multiplication.
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\problemlabel
+
+\exerciselabel{20}{5.1}\begin{exercise} \label{c5.1.9}
+Recall from equation~\eqref{e:solnODE} of Section~\ref{S:IVP&E}
+that solutions to the system of differential equations
+\[
+\frac{dX}{dt} = \mattwo{-1}{3}{3}{-1} X
+\]
+are
+\[
+X(t) = \alpha e^{2t}\vectwo{1}{1} + \beta e^{-4t}\vectwo{1}{-1}.
+\]
+Use this formula for solutions to show that the set of solutions
+to this system of differential equations is a vector subspace of
+$(\CCone)^2$.
+
+\begin{solution}
+
+Let $V \subset (\CCone)^2$ be the set of solutions to \eqref{e:solnODE}.
+The set is closed under both addition and scalar multiplication and
+is a subspace.
+To demonstrate, let
+\[
+x_1(t) = \alpha_1 e^{2t}\vectwo{1}{1} +
+\beta_1 e^{-4t}\vectwo{1}{-1} \AND x_2(t) =
+\alpha_2 e^{2t}\vectwo{1}{1} + \beta_2 e^{-4t}\vectwo{1}{-1}
+\]
+be elements of this set.  Adding $x_1$ and $x_2$ yields
+\[
+\left(\alpha_1 e^{2t}\vectwo{1}{1} +
+\beta_1 e^{-4t}\vectwo{1}{-1}\right) +
+\left(\alpha_2 e^{2t}\vectwo{1}{1}
++ \beta_2 e^{-4t}\vectwo{1}{-1}\right)
+\]
+\[
+= (\alpha_1 + \alpha_2)e^{2t}\vectwo{1}{1} +
+(\beta_1 + \beta_2) e^{-4t}\vectwo{1}{-1} \in V
+\]
+and multiplying $x_1$ by any real scalar $r$ yields
+\[
+rx_1 = r\left(\alpha_1 e^{2t}\vectwo{1}{1} +
+\beta_1 e^{-4t}\vectwo{1}{-1}\right) = r\alpha_1 e^{2t}\vectwo{1}{1} +
+r\beta_1 e^{-4t}\vectwo{1}{-1} \in V.
+\]
+
+
+
+\end{solution}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
