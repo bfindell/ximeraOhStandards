@@ -1,5 +1,3 @@
-% For preamble materials
-
 \usepackage{pgf,tikz}
 \usepackage{mathrsfs}
 \usetikzlibrary{shapes,arrows}
@@ -38,13 +36,6 @@
 
 \usepackage{epsfig}
 
-%\graphicspath{
-%  {./}
-%  {figures/}
-%  {../laode}
-%  {../laode/figures}
-%}
-
 \usepackage{epstopdf}
 \epstopdfsetup{outdir=./}
 
@@ -61,17 +52,6 @@
 
 \newenvironment{computerExercise}{\begin{exercise}}{\end{exercise}}
 
-%\newcounter{ccounter}
-%\setcounter{ccounter}{1}
-%\newcommand{\Chapter}[1]{\setcounter{chapter}{\arabic{ccounter}}\chapter{#1}\addtocounter{ccounter}{1}}
-
-%\newcommand{\section}[1]{\section{#1}\setcounter{thm}{0}\setcounter{equation}{0}}
-
-%\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}
-%\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
-%\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
-
-%\newcommand{\Sec}[2]{\section{#1}\markright{\arabic{ccounter}.\arabic{section}.#2}\setcounter{equation}{0}\setcounter{thm}{0}\setcounter{figure}{0}}
   
 \newcommand{\Sec}[2]{\section{#1}}
 
@@ -88,13 +68,8 @@
 \newcommand{\pplane}{{\sf pplane9}}
 \newcommand{\PPLANE}{{\sf PPLANE9}}
 
-% BADBAD: \newcommand{\Bbb}{\bf}
-
-%\newcommand{\R}{\mbox{$\Bbb{R}$}}
-%\newcommand{\C}{\mbox{$\Bbb{C}$}}
-%\newcommand{\Z}{\mbox{$\Bbb{Z}$}}
-%\newcommand{\N}{\mbox{$\Bbb{N}$}}
 \newcommand{\D}{\mbox{{\bf D}}}
+
 \usepackage{amssymb}
 %\newcommand{\qed}{\hfill\mbox{\raggedright$\square$} \vspace{1ex}}
 %\newcommand{\proof}{\noindent {\bf Proof:} \hspace{0.1in}}
@@ -163,21 +138,6 @@
 \newcounter{help}
 \renewcommand{\thehelp}{\thesection.\arabic{equation}}
 
-%\newenvironment{equation*}%
-%{\renewcommand\endequation{\eqno (\theequation)* $$}%
-%   \begin{equation}}%
-%   {\end{equation}\renewcommand\endequation{\eqno \@eqnnum
-%$$\global\@ignoretrue}}
-
-%\input{psfig.tex}
-
-\author{Martin Golubitsky and Michael Dellnitz}
-
-%\newenvironment{matlabEquation}%
-%{\renewcommand\endequation{\eqno (\theequation*) $$}%
-%   \begin{equation}}%
-%   {\end{equation}\renewcommand\endequation{\eqno \@eqnnum
-% $$\global\@ignoretrue}}
 
 \newcommand{\soln}{\textbf{Solution:} }
 \newcommand{\exercap}[1]{\centerline{Figure~\ref{#1}}}
@@ -205,16 +165,14 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
   {\end{equation}\let\theequation\oldtheequation}
 %\fi
 
-\makeatother
-
 %%
 %%
 %% Worksheet-builder preamble
 %%
 %%
 
-\usepackage{xcolor}
-\renewenvironment{solution}{\color{blue}}{\color{black}}
+%\usepackage{xcolor}
+\renewenvironment{solution}{\textcolor{blue}}{\textcolor{black}}
 \renewenvironment{computerExercise}{\begin{exercise}\textsc{(matlab)} }{\end{exercise}}
 
 \usepackage{amsmath}
@@ -230,8 +188,6 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 
 \renewcommand{\answer}[2][]{#2}
 
-%\graphicspath{\string~/linear-algebra/laode}
-
 % if you want to hide solutions, uncomment the following
 %\usepackage{comment}\excludecomment{solution}
 
@@ -244,14 +200,5 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 %\newcounter{problem}
 \newcommand{\problemlabel}{\refstepcounter{problem}\section*{Problem \arabic{problem}}}
 \newcommand{\matlabproblemlabel}{\refstepcounter{problem}\section*{Problem \arabic{problem} (MATLAB)}}
-
-%\renewcommand{\maketitle}{%
-%  \begin{center}
-%    \textbf{\@title} \\
-%    \@author \\
-%    \@date
-%  \end{center}
-%  }
-%\makeatother
-
+\makeatother
 
