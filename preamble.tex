@@ -177,16 +177,16 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 
 \usepackage{amsmath}
 
-\usepackage{environ}
-\RenewEnviron{prompt}{}
-\RenewEnviron{hint}{}
-\RenewEnviron{multipleChoice}{}
-\RenewEnviron{feedback}{}
+%\usepackage{environ}
+%\RenewEnviron{prompt}{}
+%\RenewEnviron{hint}{}
+%\RenewEnviron{multipleChoice}{}
+%\RenewEnviron{feedback}{}
 
 \renewcommand{\ans}{\noindent\textbf{Answer: }}
 \renewcommand{\soln}{\noindent\textbf{Solution: }}
 
-\renewcommand{\answer}[2][]{#2}
+%\renewcommand{\answer}[2][]{#2}
 
 % if you want to hide solutions, uncomment the following
 %\usepackage{comment}\excludecomment{solution}
@@ -196,9 +196,11 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 
 \makeatletter
 \newcommand{\exerciselabel}[2]{\textbf{\textsection #2, Exercise #1\isitmatlab.}\def\@currentlabel{#1}\def\isitmatlab{}}
+\makeatother
 
 %\newcounter{problem}
-\newcommand{\problemlabel}{\refstepcounter{problem}\section*{Problem \arabic{problem}}}
-\newcommand{\matlabproblemlabel}{\refstepcounter{problem}\section*{Problem \arabic{problem} (MATLAB)}}
-\makeatother
+%\newcommand{\problemlabel}{\refstepcounter{problem}\section*{Problem \arabic{problem}}}
+%\newcommand{\matlabproblemlabel}{\refstepcounter{problem}\section*{Problem \arabic{problem} (MATLAB)}}
+\newcommand{\problemlabel}{\refstepcounter{problem}\section*{Problem}}
+\newcommand{\matlabproblemlabel}{\refstepcounter{problem}\section*{Problem (MATLAB)}}
 
